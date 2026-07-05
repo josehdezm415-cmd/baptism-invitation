@@ -1,0 +1,221 @@
+import React, { useEffect, useMemo, useState } from 'react';
+import { createRoot } from 'react-dom/client';
+import { CalendarDays, Church, MapPin, MessageCircle, Phone, Sparkles } from 'lucide-react';
+import './styles.css';
+
+const invitation = {
+  babyName: '[Nombre del bebé]',
+  dayName: '[Sábado]',
+  date: '[15 de marzo, 2026]',
+  time: '[10:00 a.m.]',
+  parents: '[Nombres de los papás]',
+  year: '[2026]',
+  rsvpDeadline: '[fecha límite]',
+  rsvpName: '[Nombre]',
+  rsvpPhoneDisplay: '[Número]',
+  rsvpPhoneWa: '[NUMERO]',
+  church: {
+    name: '[Nombre de la iglesia]',
+    address: '[Dirección de la iglesia]',
+    mapUrl: '[LINK_GOOGLE_MAPS_IGLESIA]'
+  },
+  reception: {
+    name: '[Lugar de recepción]',
+    address: '[Dirección o referencia]',
+    mapUrl: '[LINK_GOOGLE_MAPS_RECEPCION]'
+  },
+  dressCode: '[Formal / Semi-formal]'
+};
+
+function useActiveSection(ids) {
+  const [active, setActive] = useState(ids[0]);
+
+  useEffect(() => {
+    const elements = ids.map(id => document.getElementById(id)).filter(Boolean);
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter(entry => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (visible) setActive(visible.target.id);
+    }, { threshold: [0.25, 0.5, 0.75] });
+
+    elements.forEach(element => observer.observe(element));
+    return () => observer.disconnect();
+  }, [ids]);
+
+  return active;
+}
+
+function Button({ href, children, variant = 'primary', icon: Icon, ...props }) {
+  return (
+    <a className={`button ${variant}`} href={href} {...props}>
+      {Icon ? <Icon size={18} aria-hidden="true" /> : null}
+      <span>{children}</span>
+    </a>
+  );
+}
+
+function Nav() {
+  const navItems = useMemo(() => [
+    { id: 'detalles', label: 'Detalles' },
+    { id: 'ubicaciones', label: 'Ubicaciones' },
+    { id: 'rsvp', label: 'RSVP' }
+  ], []);
+  const active = useActiveSection(navItems.map(item => item.id));
+
+  return (
+    <nav className="topbar" aria-label="Navegación">
+      {navItems.map(item => (
+        <a key={item.id} className={active === item.id ? 'active' : ''} href={`#${item.id}`}>
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  );
+}
+
+function Hero() {
+  return (
+    <section className="hero" aria-label="Invitación principal">
+      <div className="halo halo-one" />
+      <div className="halo halo-two" />
+      <Nav />
+
+      <div className="hero-card">
+        <Sparkles className="card-star top-star" size={19} aria-hidden="true" />
+        <p className="eyebrow">Con amor y gratitud</p>
+        <h1>Bautizo de<br /><span>{invitation.babyName}</span></h1>
+        <p className="intro">Nos encantaría que nos acompañes a celebrar este momento especial en la vida de nuestra familia.</p>
+
+        <div className="date-block" aria-label="Fecha del evento">
+          <span className="day">{invitation.dayName}</span>
+          <strong>{invitation.date}</strong>
+          <span className="time">{invitation.time}</span>
+        </div>
+
+        <div className="hero-actions">
+          <Button href="#rsvp" icon={MessageCircle}>Confirmar asistencia</Button>
+          <Button href="#ubicaciones" variant="ghost" icon={MapPin}>Ver ubicación</Button>
+        </div>
+        <Sparkles className="card-star bottom-star" size={19} aria-hidden="true" />
+      </div>
+    </section>
+  );
+}
+
+function Details() {
+  const cards = [
+    {
+      icon: Church,
+      label: 'Ceremonia',
+      title: invitation.church.name,
+      body: invitation.church.address,
+      small: `Hora: ${invitation.time}`
+    },
+    {
+      icon: CalendarDays,
+      label: 'Recepción',
+      title: invitation.reception.name,
+      body: invitation.reception.address,
+      small: 'Después de la ceremonia'
+    },
+    {
+      icon: Sparkles,
+      label: 'Vestimenta',
+      title: invitation.dressCode,
+      body: 'Te sugerimos tonos claros o neutros para acompañar el estilo de la celebración.',
+      small: 'Gracias por acompañarnos'
+    }
+  ];
+
+  return (
+    <section id="detalles" className="section details">
+      <div className="section-heading">
+        <p className="eyebrow">Detalles</p>
+        <h2>Un día para compartir en familia</h2>
+      </div>
+
+      <div className="detail-grid">
+        {cards.map(({ icon: Icon, label, title, body, small }) => (
+          <article key={label}>
+            <div className="icon-mark"><Icon size={20} aria-hidden="true" /></div>
+            <span className="label">{label}</span>
+            <h3>{title}</h3>
+            <p>{body}</p>
+            <p className="small">{small}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Blessing() {
+  return (
+    <section className="blessing" aria-label="Bendición">
+      <p className="quote">“Que Dios bendiga siempre su camino y llene su vida de amor, fe y alegría.”</p>
+      <p className="signature">Con cariño,<br />{invitation.parents}</p>
+    </section>
+  );
+}
+
+function Locations() {
+  return (
+    <section id="ubicaciones" className="section locations">
+      <div className="section-heading">
+        <p className="eyebrow">Ubicaciones</p>
+        <h2>Cómo llegar</h2>
+      </div>
+
+      <div className="location-grid">
+        <article className="location-card">
+          <MapPin size={22} aria-hidden="true" />
+          <h3>Iglesia</h3>
+          <p>{invitation.church.name}</p>
+          <a className="text-link" href={invitation.church.mapUrl} target="_blank" rel="noopener noreferrer">Abrir en Google Maps</a>
+        </article>
+        <article className="location-card">
+          <MapPin size={22} aria-hidden="true" />
+          <h3>Recepción</h3>
+          <p>{invitation.reception.name}</p>
+          <a className="text-link" href={invitation.reception.mapUrl} target="_blank" rel="noopener noreferrer">Abrir en Google Maps</a>
+        </article>
+      </div>
+    </section>
+  );
+}
+
+function RSVP() {
+  const whatsappText = encodeURIComponent(`Hola, confirmo mi asistencia al bautizo de ${invitation.babyName}`);
+  const whatsappUrl = `https://wa.me/${invitation.rsvpPhoneWa}?text=${whatsappText}`;
+
+  return (
+    <section id="rsvp" className="section rsvp">
+      <div className="rsvp-card">
+        <p className="eyebrow">RSVP</p>
+        <h2>Confirma tu asistencia</h2>
+        <p>Por favor confirma antes del <strong>{invitation.rsvpDeadline}</strong> para poder preparar todo con cariño.</p>
+        <div className="rsvp-actions">
+          <Button href={whatsappUrl} target="_blank" rel="noopener noreferrer" icon={MessageCircle}>Confirmar por WhatsApp</Button>
+          <Button href={`tel:${invitation.rsvpPhoneWa}`} variant="ghost" icon={Phone}>Llamar</Button>
+        </div>
+        <p className="small">Contacto: {invitation.rsvpName} · {invitation.rsvpPhoneDisplay}</p>
+      </div>
+    </section>
+  );
+}
+
+function App() {
+  return (
+    <main>
+      <Hero />
+      <Details />
+      <Blessing />
+      <Locations />
+      <RSVP />
+      <footer>Bautizo de {invitation.babyName} · {invitation.year}</footer>
+    </main>
+  );
+}
+
+createRoot(document.getElementById('root')).render(<App />);
