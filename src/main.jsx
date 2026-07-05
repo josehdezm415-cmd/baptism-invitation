@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { CalendarDays, Church, MapPin, MessageCircle, Phone, Sparkles } from 'lucide-react';
+import { CalendarDays, ChevronLeft, ChevronRight, Church, Images, MapPin, MessageCircle, Phone, Sparkles } from 'lucide-react';
 import './styles.css';
 
 const invitation = {
@@ -58,6 +58,7 @@ function Button({ href, children, variant = 'primary', icon: Icon, ...props }) {
 function Nav() {
   const navItems = useMemo(() => [
     { id: 'detalles', label: 'Detalles' },
+    { id: 'fotos', label: 'Fotos' },
     { id: 'ubicaciones', label: 'Ubicaciones' },
     { id: 'rsvp', label: 'RSVP' }
   ], []);
@@ -159,6 +160,102 @@ function Blessing() {
   );
 }
 
+const photoSlides = [
+  {
+    label: 'Foto 1',
+    title: 'Dulce espera',
+    caption: 'Espacio para una foto especial del bebé o de la familia.'
+  },
+  {
+    label: 'Foto 2',
+    title: 'Un momento de amor',
+    caption: 'Ideal para una foto natural, tierna y luminosa.'
+  },
+  {
+    label: 'Foto 3',
+    title: 'Bendiciones',
+    caption: 'Puede ser una foto con papás, padrinos o detalles del bautizo.'
+  },
+  {
+    label: 'Foto 4',
+    title: 'Nuestra familia',
+    caption: 'Otro recuerdo bonito para compartir con los invitados.'
+  }
+];
+
+function PhotoSlideshow() {
+  const [current, setCurrent] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  useEffect(() => {
+    if (paused) return undefined;
+    const timer = window.setInterval(() => {
+      setCurrent(index => (index + 1) % photoSlides.length);
+    }, 4800);
+    return () => window.clearInterval(timer);
+  }, [paused]);
+
+  const goTo = (index) => setCurrent((index + photoSlides.length) % photoSlides.length);
+  const activeSlide = photoSlides[current];
+
+  return (
+    <section id="fotos" className="section photos">
+      <div className="section-heading centered">
+        <p className="eyebrow">Momentos especiales</p>
+        <h2>Un pequeño recuerdo para compartir</h2>
+      </div>
+
+      <div
+        className="slideshow-card"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+      >
+        <button className="slide-button prev" type="button" aria-label="Foto anterior" onClick={() => goTo(current - 1)}>
+          <ChevronLeft size={24} aria-hidden="true" />
+        </button>
+
+        <div className="slide-stage" aria-live="polite">
+          {photoSlides.map((slide, index) => (
+            <article
+              key={slide.label}
+              className={`photo-slide placeholder-${index + 1} ${index === current ? 'active' : ''}`}
+              aria-hidden={index !== current}
+            >
+              <div className="photo-placeholder">
+                <Images size={38} aria-hidden="true" />
+                <span>{slide.label}</span>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="slide-copy">
+          <p className="eyebrow">Galería</p>
+          <h3>{activeSlide.title}</h3>
+          <p>{activeSlide.caption}</p>
+          <p className="small">Cuando me mandes las fotos, reemplazo estos espacios por imágenes reales.</p>
+        </div>
+
+        <button className="slide-button next" type="button" aria-label="Siguiente foto" onClick={() => goTo(current + 1)}>
+          <ChevronRight size={24} aria-hidden="true" />
+        </button>
+      </div>
+
+      <div className="slide-dots" aria-label="Seleccionar foto">
+        {photoSlides.map((slide, index) => (
+          <button
+            key={slide.label}
+            type="button"
+            className={index === current ? 'active' : ''}
+            aria-label={`Ver ${slide.label}`}
+            onClick={() => goTo(index)}
+          />
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function Locations() {
   return (
     <section id="ubicaciones" className="section locations">
@@ -210,6 +307,7 @@ function App() {
     <main>
       <Hero />
       <Details />
+      <PhotoSlideshow />
       <Blessing />
       <Locations />
       <RSVP />
