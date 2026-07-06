@@ -165,29 +165,29 @@ const photoSlides = [
     label: 'Foto 1',
     title: 'Dulce sonrisa',
     caption: 'Un momento lleno de ternura y alegría.',
-    src: './photos/baby-smile.jpg',
-    position: 'center 32%'
+    src: './photos/baby-smile-fill.jpg',
+    position: 'center center'
   },
   {
     label: 'Foto 2',
     title: 'Nuestro pequeño amor',
     caption: 'Una sonrisa que ilumina a toda la familia.',
-    src: './photos/baby-chair.jpg',
-    position: 'center 30%'
+    src: './photos/baby-chair-fill.jpg',
+    position: 'center center'
   },
   {
     label: 'Foto 3',
     title: 'En familia',
     caption: 'Recuerdos especiales compartidos con mucho cariño.',
-    src: './photos/family-christmas.jpg',
-    position: 'center 24%'
+    src: './photos/family-christmas-fill.jpg',
+    position: 'center center'
   },
   {
     label: 'Foto 4',
     title: 'Desde el inicio',
     caption: 'Bendecido desde sus primeros días.',
-    src: './photos/newborn-blanket.jpg',
-    position: 'center 42%'
+    src: './photos/newborn-blanket-fill.jpg',
+    position: 'center center'
   }
 ];
 
