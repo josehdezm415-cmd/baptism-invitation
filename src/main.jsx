@@ -119,32 +119,36 @@ function Hero() {
     <section className="hero" aria-label="Invitación principal">
       <div className="halo halo-one" />
       <div className="halo halo-two" />
-      <div className="hero-photo" aria-hidden="true">
-        <img src="./photos/newborn-blanket-fill.jpg" alt="" />
-      </div>
       <Nav />
 
-      <div className="hero-card">
-        <Sparkles className="card-star top-star" size={19} aria-hidden="true" />
-        <p className="eyebrow">Con amor y gratitud</p>
-        <h1>Bautizo de<br /><span>{invitation.babyName}</span></h1>
-        <p className="intro">Nos encantaría que nos acompañes a celebrar este momento especial en la vida de nuestra familia.</p>
-
-        <div className="date-block" aria-label="Fecha del evento">
-          <span className="day">{invitation.dayName}</span>
-          <strong>{invitation.date}</strong>
-          <span className="time">{invitation.time}</span>
+      <div className="hero-showcase">
+        <div className="hero-photo" aria-hidden="true">
+          <img src="./photos/newborn-blanket-fill.jpg" alt="" />
+          <div className="photo-ribbon">Denzel Boel</div>
         </div>
 
-        <Countdown />
+        <div className="hero-card">
+          <Sparkles className="card-star top-star" size={19} aria-hidden="true" />
+          <p className="eyebrow">Con amor y gratitud</p>
+          <h1>Bautizo de<br /><span>{invitation.babyName}</span></h1>
+          <p className="intro">Nos encantaría que nos acompañes a celebrar este momento especial en la vida de nuestra familia.</p>
 
-        <div className="hero-actions">
-          <Button href="#rsvp" icon={MessageCircle}>Confirmar asistencia</Button>
-          <Button href="#ubicaciones" variant="ghost" icon={MapPin}>Ver ubicación</Button>
-          <Button href={googleCalendarUrl} target="_blank" rel="noopener noreferrer" variant="ghost" icon={CalendarDays}>Agregar al calendario</Button>
-          <Button href={shareUrl} target="_blank" rel="noopener noreferrer" variant="ghost" icon={Share2}>Compartir</Button>
+          <div className="date-block" aria-label="Fecha del evento">
+            <span className="day">{invitation.dayName}</span>
+            <strong>{invitation.date}</strong>
+            <span className="time">{invitation.time}</span>
+          </div>
+
+          <Countdown />
+
+          <div className="hero-actions">
+            <Button href="#rsvp" icon={MessageCircle}>Confirmar asistencia</Button>
+            <Button href="#ubicaciones" variant="ghost" icon={MapPin}>Ver ubicación</Button>
+            <Button href={googleCalendarUrl} target="_blank" rel="noopener noreferrer" variant="ghost" icon={CalendarDays}>Agregar al calendario</Button>
+            <Button href={shareUrl} target="_blank" rel="noopener noreferrer" variant="ghost" icon={Share2}>Compartir</Button>
+          </div>
+          <Sparkles className="card-star bottom-star" size={19} aria-hidden="true" />
         </div>
-        <Sparkles className="card-star bottom-star" size={19} aria-hidden="true" />
       </div>
     </section>
   );
