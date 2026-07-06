@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { CalendarDays, ChevronLeft, ChevronRight, Gift, MapPin, MessageCircle, Phone, Sparkles } from 'lucide-react';
+import { CalendarDays, ChevronLeft, ChevronRight, Gift, MapPin, MessageCircle, Phone, Share2, Sparkles } from 'lucide-react';
 import './styles.css';
 
 const invitation = {
@@ -10,6 +10,8 @@ const invitation = {
   time: '3:00 p.m.',
   parents: 'Kathy Lazo y Victor Villalobos',
   year: '2026',
+  eventStartIso: '2026-07-25T15:00:00-06:00',
+  eventEndIso: '2026-07-25T18:00:00-06:00',
   rsvpDeadline: 'cuando puedas',
   rsvpName: 'RSVP',
   rsvpPhoneDisplay: '7956 7733',
@@ -21,8 +23,26 @@ const invitation = {
     wazeUrl: 'https://waze.com/ul/hd42teqh0y'
   },
   dressCode: 'Semi formal',
-  giftNote: 'Regalo de sobre solamente'
+  giftNote: 'Si deseas tener un detalle con Denzel, agradecemos regalo de sobre.'
 };
+
+const siteUrl = 'https://josehdezm415-cmd.github.io/baptism-invitation/';
+
+function formatGoogleDate(iso) {
+  return new Date(iso).toISOString().replace(/[-:]/g, '').replace(/\.\d{3}Z$/, 'Z');
+}
+
+function getCountdownParts(targetIso) {
+  const diff = Math.max(0, new Date(targetIso).getTime() - Date.now());
+  const days = Math.floor(diff / 86400000);
+  const hours = Math.floor((diff % 86400000) / 3600000);
+  const minutes = Math.floor((diff % 3600000) / 60000);
+  return { days, hours, minutes };
+}
+
+const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(`Bautizo de ${invitation.babyName}`)}&dates=${formatGoogleDate(invitation.eventStartIso)}/${formatGoogleDate(invitation.eventEndIso)}&details=${encodeURIComponent(`Acompáñanos a celebrar el bautizo de ${invitation.babyName}. RSVP: ${invitation.rsvpPhoneDisplay}. ${siteUrl}`)}&location=${encodeURIComponent(`${invitation.reception.name}, ${invitation.reception.address}`)}`;
+
+const shareUrl = `https://wa.me/?text=${encodeURIComponent(`Te comparto la invitación al bautizo de ${invitation.babyName}: ${siteUrl}`)}`;
 
 function useActiveSection(ids) {
   const [active, setActive] = useState(ids[0]);
@@ -72,11 +92,36 @@ function Nav() {
   );
 }
 
+function Countdown() {
+  const [timeLeft, setTimeLeft] = useState(() => getCountdownParts(invitation.eventStartIso));
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setTimeLeft(getCountdownParts(invitation.eventStartIso));
+    }, 60000);
+    return () => window.clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="countdown" aria-label="Cuenta regresiva">
+      <p>Faltan</p>
+      <div>
+        <strong>{timeLeft.days}</strong><span>días</span>
+        <strong>{timeLeft.hours}</strong><span>horas</span>
+        <strong>{timeLeft.minutes}</strong><span>min</span>
+      </div>
+    </div>
+  );
+}
+
 function Hero() {
   return (
     <section className="hero" aria-label="Invitación principal">
       <div className="halo halo-one" />
       <div className="halo halo-two" />
+      <div className="hero-photo" aria-hidden="true">
+        <img src="./photos/newborn-blanket-fill.jpg" alt="" />
+      </div>
       <Nav />
 
       <div className="hero-card">
@@ -91,9 +136,13 @@ function Hero() {
           <span className="time">{invitation.time}</span>
         </div>
 
+        <Countdown />
+
         <div className="hero-actions">
           <Button href="#rsvp" icon={MessageCircle}>Confirmar asistencia</Button>
           <Button href="#ubicaciones" variant="ghost" icon={MapPin}>Ver ubicación</Button>
+          <Button href={googleCalendarUrl} target="_blank" rel="noopener noreferrer" variant="ghost" icon={CalendarDays}>Agregar al calendario</Button>
+          <Button href={shareUrl} target="_blank" rel="noopener noreferrer" variant="ghost" icon={Share2}>Compartir</Button>
         </div>
         <Sparkles className="card-star bottom-star" size={19} aria-hidden="true" />
       </div>
@@ -294,6 +343,8 @@ function RSVP() {
         <div className="rsvp-actions">
           <Button href={whatsappUrl} target="_blank" rel="noopener noreferrer" icon={MessageCircle}>Confirmar por WhatsApp</Button>
           <Button href={`tel:${invitation.rsvpPhoneWa}`} variant="ghost" icon={Phone}>Llamar</Button>
+          <Button href={googleCalendarUrl} target="_blank" rel="noopener noreferrer" variant="ghost" icon={CalendarDays}>Guardar fecha</Button>
+          <Button href={shareUrl} target="_blank" rel="noopener noreferrer" variant="ghost" icon={Share2}>Compartir invitación</Button>
         </div>
         <p className="small">Contacto: {invitation.rsvpPhoneDisplay}</p>
       </div>
