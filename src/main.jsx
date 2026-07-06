@@ -4,7 +4,7 @@ import { CalendarDays, ChevronLeft, ChevronRight, Gift, MapPin, MessageCircle, P
 import './styles.css';
 
 const invitation = {
-  babyName: 'Denzel Boel Lazo',
+  babyName: 'Denzel Boel Villalobos',
   dayName: 'Sábado',
   date: '25 de julio, 2026',
   time: '3:00 p.m.',
