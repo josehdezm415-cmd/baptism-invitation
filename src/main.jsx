@@ -123,7 +123,7 @@ function Hero() {
 
       <div className="hero-showcase">
         <div className="hero-photo" aria-hidden="true">
-          <img src="./photos/newborn-blanket-fill.jpg" alt="" />
+          <img src="./photos/baby-smile-fill.jpg" alt="" />
           <div className="photo-ribbon">Denzel Boel</div>
         </div>
 
