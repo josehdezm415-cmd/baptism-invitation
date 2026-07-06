@@ -128,10 +128,6 @@ function Hero() {
 
         <div className="hero-card">
           <Sparkles className="card-star top-star" size={19} aria-hidden="true" />
-          <div className="baptism-emblem" aria-hidden="true">
-            <span className="cross-shape" />
-            <span className="water-arc" />
-          </div>
           <p className="eyebrow">Con amor y gratitud</p>
           <h1>Bautizo de<br /><span>{invitation.babyName}</span></h1>
           <p className="intro">Nos encantaría que nos acompañes a celebrar este momento especial en la vida de nuestra familia.</p>
@@ -207,7 +203,6 @@ function Details() {
 function Blessing() {
   return (
     <section className="blessing" aria-label="Bendición">
-      <div className="blessing-emblem" aria-hidden="true"><span className="cross-shape" /></div>
       <p className="quote">“Que Dios bendiga siempre su camino y llene su vida de amor, fe y alegría.”</p>
       <p className="signature">Con cariño,<br />{invitation.parents}</p>
     </section>
