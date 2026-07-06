@@ -1,30 +1,27 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { CalendarDays, ChevronLeft, ChevronRight, Church, MapPin, MessageCircle, Phone, Sparkles } from 'lucide-react';
+import { CalendarDays, ChevronLeft, ChevronRight, Gift, MapPin, MessageCircle, Phone, Sparkles } from 'lucide-react';
 import './styles.css';
 
 const invitation = {
-  babyName: '[Nombre del bebé]',
-  dayName: '[Sábado]',
-  date: '[15 de marzo, 2026]',
-  time: '[10:00 a.m.]',
-  parents: '[Nombres de los papás]',
-  year: '[2026]',
-  rsvpDeadline: '[fecha límite]',
-  rsvpName: '[Nombre]',
-  rsvpPhoneDisplay: '[Número]',
-  rsvpPhoneWa: '[NUMERO]',
-  church: {
-    name: '[Nombre de la iglesia]',
-    address: '[Dirección de la iglesia]',
-    mapUrl: '[LINK_GOOGLE_MAPS_IGLESIA]'
-  },
+  babyName: 'Denzel Boel Lazo',
+  dayName: 'Sábado',
+  date: '25 de julio, 2026',
+  time: '3:00 p.m.',
+  parents: 'Kathy Lazo y Victor Villalobos',
+  year: '2026',
+  rsvpDeadline: 'cuando puedas',
+  rsvpName: 'RSVP',
+  rsvpPhoneDisplay: '7956 7733',
+  rsvpPhoneWa: '50379567733',
   reception: {
-    name: '[Lugar de recepción]',
-    address: '[Dirección o referencia]',
-    mapUrl: '[LINK_GOOGLE_MAPS_RECEPCION]'
+    name: 'Ciudad Dorada Casa Club',
+    address: 'Ciudad Dorada, San Salvador',
+    mapUrl: 'https://maps.app.goo.gl/4TtBxDXb8QvcPNL78?g_st=ic',
+    wazeUrl: 'https://waze.com/ul/hd42teqh0y'
   },
-  dressCode: '[Formal / Semi-formal]'
+  dressCode: 'Semi formal',
+  giftNote: 'Regalo de sobre solamente'
 };
 
 function useActiveSection(ids) {
@@ -107,18 +104,11 @@ function Hero() {
 function Details() {
   const cards = [
     {
-      icon: Church,
-      label: 'Ceremonia',
-      title: invitation.church.name,
-      body: invitation.church.address,
-      small: `Hora: ${invitation.time}`
-    },
-    {
       icon: CalendarDays,
-      label: 'Recepción',
+      label: 'Celebración',
       title: invitation.reception.name,
       body: invitation.reception.address,
-      small: 'Después de la ceremonia'
+      small: `${invitation.dayName}, ${invitation.date} · ${invitation.time}`
     },
     {
       icon: Sparkles,
@@ -126,6 +116,13 @@ function Details() {
       title: invitation.dressCode,
       body: 'Te sugerimos tonos claros o neutros para acompañar el estilo de la celebración.',
       small: 'Gracias por acompañarnos'
+    },
+    {
+      icon: Gift,
+      label: 'Regalo',
+      title: 'Sobre',
+      body: invitation.giftNote,
+      small: 'Tu presencia es lo más importante'
     }
   ];
 
@@ -272,15 +269,12 @@ function Locations() {
       <div className="location-grid">
         <article className="location-card">
           <MapPin size={22} aria-hidden="true" />
-          <h3>Iglesia</h3>
-          <p>{invitation.church.name}</p>
-          <a className="text-link" href={invitation.church.mapUrl} target="_blank" rel="noopener noreferrer">Abrir en Google Maps</a>
-        </article>
-        <article className="location-card">
-          <MapPin size={22} aria-hidden="true" />
-          <h3>Recepción</h3>
-          <p>{invitation.reception.name}</p>
-          <a className="text-link" href={invitation.reception.mapUrl} target="_blank" rel="noopener noreferrer">Abrir en Google Maps</a>
+          <h3>{invitation.reception.name}</h3>
+          <p>{invitation.reception.address}</p>
+          <div className="map-links">
+            <a className="text-link" href={invitation.reception.mapUrl} target="_blank" rel="noopener noreferrer">Abrir en Google Maps</a>
+            <a className="text-link" href={invitation.reception.wazeUrl} target="_blank" rel="noopener noreferrer">Abrir en Waze</a>
+          </div>
         </article>
       </div>
     </section>
@@ -288,7 +282,7 @@ function Locations() {
 }
 
 function RSVP() {
-  const whatsappText = encodeURIComponent(`Hola, confirmo mi asistencia al bautizo de ${invitation.babyName}`);
+  const whatsappText = encodeURIComponent(`Hola, confirmo mi asistencia al bautizo de ${invitation.babyName}.`);
   const whatsappUrl = `https://wa.me/${invitation.rsvpPhoneWa}?text=${whatsappText}`;
 
   return (
@@ -296,12 +290,12 @@ function RSVP() {
       <div className="rsvp-card">
         <p className="eyebrow">RSVP</p>
         <h2>Confirma tu asistencia</h2>
-        <p>Por favor confirma antes del <strong>{invitation.rsvpDeadline}</strong> para poder preparar todo con cariño.</p>
+        <p>Por favor confirma <strong>{invitation.rsvpDeadline}</strong> para poder preparar todo con cariño.</p>
         <div className="rsvp-actions">
           <Button href={whatsappUrl} target="_blank" rel="noopener noreferrer" icon={MessageCircle}>Confirmar por WhatsApp</Button>
           <Button href={`tel:${invitation.rsvpPhoneWa}`} variant="ghost" icon={Phone}>Llamar</Button>
         </div>
-        <p className="small">Contacto: {invitation.rsvpName} · {invitation.rsvpPhoneDisplay}</p>
+        <p className="small">Contacto: {invitation.rsvpPhoneDisplay}</p>
       </div>
     </section>
   );
