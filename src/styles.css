@@ -137,23 +137,6 @@ main { overflow: hidden; }
   object-fit: cover;
   display: block;
 }
-.photo-ribbon {
-  position: absolute;
-  left: 22px;
-  right: 22px;
-  bottom: 20px;
-  z-index: 3;
-  padding: 10px 14px;
-  border: 1px solid rgba(255, 250, 242, 0.54);
-  border-radius: 999px;
-  color: #fffaf2;
-  background: rgba(41, 32, 24, 0.38);
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 1.38rem;
-  font-weight: 700;
-  text-align: center;
-  backdrop-filter: blur(12px);
-}
 .hero-card {
   position: relative;
   z-index: 2;
@@ -405,6 +388,28 @@ article p { margin: 0 0 10px; color: var(--muted); }
 .rsvp { padding-bottom: 110px; }
 .rsvp-card { width: min(760px, 100%); margin: 0 auto; padding: clamp(30px, 6vw, 58px); text-align: center; }
 .rsvp-card > p:not(.eyebrow):not(.small) { color: var(--muted); font-size: 1.08rem; }
+.quick-rsvp {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 24px auto 22px;
+}
+.quick-rsvp a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 11px 14px;
+  border: 1px solid rgba(198, 161, 93, 0.28);
+  border-radius: 999px;
+  color: var(--gold-dark);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 247, 232, 0.68));
+  font-size: 0.92rem;
+  font-weight: 850;
+  text-decoration: none;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.54);
+}
+.quick-rsvp a:hover { transform: translateY(-1px); }
 footer { padding: 28px 20px 42px; color: var(--muted); text-align: center; }
 
 /* Subtle baptism accents: premium, ceremonial, not overpowering */
@@ -526,10 +531,10 @@ footer { padding: 28px 20px 42px; color: var(--muted); text-align: center; }
   .hero { padding-top: 84px; }
   .hero-showcase { grid-template-columns: 1fr; gap: 18px; }
   .hero-photo { display: block; justify-self: center; width: min(230px, 68vw); transform: none; border-radius: 30px; }
-  .photo-ribbon { font-size: 1.2rem; }
   .hero-card { border-radius: 28px; }
   .hero-card::before { inset: 10px; border-radius: 22px; }
   .detail-grid, .location-grid { grid-template-columns: 1fr; }
+  .quick-rsvp { grid-template-columns: 1fr; }
   .slideshow-card { grid-template-columns: 1fr; gap: 18px; }
   .slide-copy { padding: 4px 8px 10px; text-align: center; }
   .slide-stage { width: min(100%, 430px); aspect-ratio: 4 / 5; }

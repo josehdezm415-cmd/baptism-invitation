@@ -124,7 +124,6 @@ function Hero() {
       <div className="hero-showcase">
         <div className="hero-photo" aria-hidden="true">
           <img src="./photos/baby-smile-fill.jpg" alt="" />
-          <div className="photo-ribbon">Denzel Boel</div>
         </div>
 
         <div className="hero-card">
@@ -340,8 +339,22 @@ function Locations() {
 }
 
 function RSVP() {
-  const whatsappText = encodeURIComponent(`Hola, confirmo mi asistencia al bautizo de ${invitation.babyName}.`);
-  const whatsappUrl = `https://wa.me/${invitation.rsvpPhoneWa}?text=${whatsappText}`;
+  const makeWhatsappUrl = (message) => `https://wa.me/${invitation.rsvpPhoneWa}?text=${encodeURIComponent(message)}`;
+  const whatsappUrl = makeWhatsappUrl(`Hola, confirmo mi asistencia al bautizo de ${invitation.babyName}.`);
+  const rsvpOptions = [
+    {
+      label: 'Sí asistiré',
+      message: `Hola, sí asistiré al bautizo de ${invitation.babyName}.`
+    },
+    {
+      label: 'Asistiré con ___ personas',
+      message: `Hola, asistiré al bautizo de ${invitation.babyName} con ___ personas.`
+    },
+    {
+      label: 'No podré asistir',
+      message: `Hola, gracias por la invitación al bautizo de ${invitation.babyName}. No podré asistir, pero les deseo muchas bendiciones.`
+    }
+  ];
 
   return (
     <section id="rsvp" className="section rsvp">
@@ -349,6 +362,13 @@ function RSVP() {
         <p className="eyebrow">RSVP</p>
         <h2>Confirma tu asistencia</h2>
         <p>Por favor confirma <strong>{invitation.rsvpDeadline}</strong> para poder preparar todo con cariño.</p>
+        <div className="quick-rsvp" aria-label="Opciones rápidas de RSVP">
+          {rsvpOptions.map(option => (
+            <a key={option.label} href={makeWhatsappUrl(option.message)} target="_blank" rel="noopener noreferrer">
+              {option.label}
+            </a>
+          ))}
+        </div>
         <div className="rsvp-actions">
           <Button href={whatsappUrl} target="_blank" rel="noopener noreferrer" icon={MessageCircle}>Confirmar por WhatsApp</Button>
           <Button href={`tel:${invitation.rsvpPhoneWa}`} variant="ghost" icon={Phone}>Llamar</Button>
