@@ -18,8 +18,8 @@ body {
   margin: 0;
   color: var(--ink);
   background:
-    linear-gradient(180deg, rgba(255, 253, 248, 0.7), rgba(255, 248, 236, 0.78) 46%, rgba(234, 220, 197, 0.72)),
-    url('./assets/baptism-floral-cross.jpg') center top / cover fixed,
+    linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 250, 240, 0.28) 42%, rgba(246, 237, 222, 0.34)),
+    url('./assets/baptism-floral-cross-enhanced.png') center top / 100% auto repeat-y,
     linear-gradient(180deg, #fbf5ea 0%, #fffdf8 42%, var(--paper-2) 100%);
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.55;
@@ -412,7 +412,7 @@ article p { margin: 0 0 10px; color: var(--muted); }
 .quick-rsvp a:hover { transform: translateY(-1px); }
 footer { padding: 28px 20px 42px; color: var(--muted); text-align: center; }
 
-/* Frosted-glass luxury layer over the floral baptism backdrop */
+/* Frosted-glass luxury layer over the recreated floral baptism backdrop */
 .topbar,
 .hero-card,
 article,
@@ -420,22 +420,23 @@ article,
 .blessing,
 .slideshow-card {
   background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.62), rgba(255, 250, 240, 0.34)),
-    rgba(255, 255, 255, 0.26);
-  border: 1px solid rgba(255, 255, 255, 0.54);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0.48)),
+    rgba(255, 255, 255, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.72);
   box-shadow:
-    0 28px 90px rgba(61, 44, 25, 0.14),
-    inset 0 0 0 1px rgba(198, 161, 93, 0.18),
-    inset 0 1px 0 rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(22px) saturate(1.22);
-  -webkit-backdrop-filter: blur(22px) saturate(1.22);
+    0 26px 70px rgba(31, 25, 17, 0.13),
+    0 8px 22px rgba(126, 90, 33, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.88),
+    inset 0 0 0 1px rgba(198, 161, 93, 0.1);
+  backdrop-filter: blur(28px) saturate(1.12);
+  -webkit-backdrop-filter: blur(28px) saturate(1.12);
 }
 .hero-card,
 .blessing,
 .slideshow-card,
-.rsvp-card { background-color: rgba(255, 255, 255, 0.3); }
+.rsvp-card { background-color: rgba(255, 255, 255, 0.46); }
 .detail-grid article,
-.location-card { background-color: rgba(255, 255, 255, 0.28); }
+.location-card { background-color: rgba(255, 255, 255, 0.43); }
 .hero-card::before,
 .blessing::before,
 .slideshow-card::after,
@@ -443,9 +444,10 @@ article,
   content: "";
   position: absolute;
   pointer-events: none;
-  border: 1px solid rgba(198, 161, 93, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.52);
   border-radius: inherit;
-  inset: 13px;
+  inset: 11px;
+  box-shadow: inset 0 0 0 1px rgba(198, 161, 93, 0.08);
 }
 .rsvp-card,
 .blessing { position: relative; overflow: hidden; }
@@ -455,16 +457,16 @@ article,
 .ghost,
 .map-links .text-link,
 .slide-button {
-  background: rgba(255, 255, 255, 0.48);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-color: rgba(255, 255, 255, 0.56);
-  box-shadow: inset 0 0 0 1px rgba(198, 161, 93, 0.14), 0 10px 26px rgba(61, 44, 25, 0.08);
+  background: rgba(255, 255, 255, 0.58);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-color: rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.76), 0 10px 26px rgba(61, 44, 25, 0.08);
 }
 .quick-rsvp a,
 .primary {
-  border: 1px solid rgba(255, 255, 255, 0.36);
-  box-shadow: 0 14px 34px rgba(126, 90, 33, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  box-shadow: 0 14px 34px rgba(126, 90, 33, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.32);
 }
 
 /* Subtle baptism accents: premium, ceremonial, not overpowering */
