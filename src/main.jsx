@@ -166,21 +166,21 @@ const photoSlides = [
     title: 'Dulce sonrisa',
     caption: 'Un momento lleno de ternura y alegría.',
     src: './photos/baby-smile.jpg',
-    position: 'center 38%'
+    position: 'center 32%'
   },
   {
     label: 'Foto 2',
     title: 'Nuestro pequeño amor',
     caption: 'Una sonrisa que ilumina a toda la familia.',
     src: './photos/baby-chair.jpg',
-    position: 'center 34%'
+    position: 'center 30%'
   },
   {
     label: 'Foto 3',
     title: 'En familia',
     caption: 'Recuerdos especiales compartidos con mucho cariño.',
     src: './photos/family-christmas.jpg',
-    position: 'center 28%'
+    position: 'center 24%'
   },
   {
     label: 'Foto 4',

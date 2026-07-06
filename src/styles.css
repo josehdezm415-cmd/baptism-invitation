@@ -178,8 +178,8 @@ article p { margin: 0 0 10px; color: var(--muted); }
 .slideshow-card {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
-  gap: 28px;
+  grid-template-columns: minmax(320px, 0.82fr) minmax(280px, 0.78fr);
+  gap: 34px;
   align-items: center;
   padding: clamp(18px, 4vw, 30px);
   border: 1px solid var(--line);
@@ -199,7 +199,10 @@ article p { margin: 0 0 10px; color: var(--muted); }
 }
 .slide-stage {
   position: relative;
-  min-height: clamp(320px, 48vw, 560px);
+  width: min(100%, 520px);
+  aspect-ratio: 4 / 5;
+  justify-self: center;
+  min-height: 0;
   border-radius: 28px;
   overflow: hidden;
   background: var(--paper-2);
@@ -282,7 +285,7 @@ footer { padding: 28px 20px 42px; color: var(--muted); text-align: center; }
   .detail-grid, .location-grid { grid-template-columns: 1fr; }
   .slideshow-card { grid-template-columns: 1fr; gap: 18px; }
   .slide-copy { padding: 4px 8px 10px; text-align: center; }
-  .slide-stage { min-height: 360px; }
+  .slide-stage { width: min(100%, 430px); aspect-ratio: 4 / 5; }
   .slide-button { width: 42px; height: 42px; }
   .section { padding: 58px 0; }
 }
