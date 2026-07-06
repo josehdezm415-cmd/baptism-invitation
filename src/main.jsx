@@ -340,14 +340,13 @@ function Locations() {
 
 function RSVP() {
   const makeWhatsappUrl = (message) => `https://wa.me/${invitation.rsvpPhoneWa}?text=${encodeURIComponent(message)}`;
-  const whatsappUrl = makeWhatsappUrl(`Hola, confirmo mi asistencia al bautizo de ${invitation.babyName}.`);
   const rsvpOptions = [
     {
-      label: 'Sí asistiré',
+      label: 'Confirmar asistencia por WhatsApp',
       message: `Hola, sí asistiré al bautizo de ${invitation.babyName}.`
     },
     {
-      label: 'No podré asistir',
+      label: 'Confirmo que no podré asistir por WhatsApp',
       message: `Hola, gracias por la invitación al bautizo de ${invitation.babyName}. No podré asistir, pero les deseo muchas bendiciones.`
     }
   ];
@@ -366,7 +365,6 @@ function RSVP() {
           ))}
         </div>
         <div className="rsvp-actions">
-          <Button href={whatsappUrl} target="_blank" rel="noopener noreferrer" icon={MessageCircle}>Confirmar por WhatsApp</Button>
           <Button href={`tel:${invitation.rsvpPhoneWa}`} variant="ghost" icon={Phone}>Llamar</Button>
           <Button href={googleCalendarUrl} target="_blank" rel="noopener noreferrer" variant="ghost" icon={CalendarDays}>Guardar fecha</Button>
           <Button href={shareUrl} target="_blank" rel="noopener noreferrer" variant="ghost" icon={Share2}>Compartir invitación</Button>
