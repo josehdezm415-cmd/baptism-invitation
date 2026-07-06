@@ -214,25 +214,18 @@ article p { margin: 0 0 10px; color: var(--muted); }
   transition: opacity 700ms ease, transform 900ms ease;
 }
 .photo-slide.active { opacity: 1; transform: scale(1); }
-.placeholder-1 { background: linear-gradient(135deg, #f8e8d8, #dce9ef 52%, #fffaf2); }
-.placeholder-2 { background: linear-gradient(135deg, #e7d7bd, #fffaf2 48%, #d9e7ee); }
-.placeholder-3 { background: linear-gradient(135deg, #efe7d7, #f7dfe2 50%, #dce9ef); }
-.placeholder-4 { background: linear-gradient(135deg, #f8f3ea, #d7e5db 50%, #e6d2b3); }
-.photo-placeholder {
-  display: grid;
-  place-items: center;
-  gap: 10px;
-  width: min(280px, 70%);
-  aspect-ratio: 4 / 5;
-  border: 1px solid rgba(134, 102, 47, 0.28);
-  border-radius: 28px;
-  color: rgba(47, 38, 31, 0.56);
-  background: rgba(255, 250, 242, 0.48);
-  backdrop-filter: blur(8px);
-  box-shadow: inset 0 0 0 10px rgba(255, 255, 255, 0.18);
-  font-weight: 900;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+.photo-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.photo-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 58%, rgba(47, 38, 31, 0.2));
+  pointer-events: none;
 }
 .slide-copy { position: relative; z-index: 1; padding: 12px 12px 12px 0; }
 .slide-copy h3 { font-size: clamp(2.2rem, 5vw, 4rem); }

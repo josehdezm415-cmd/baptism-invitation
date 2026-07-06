@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { CalendarDays, ChevronLeft, ChevronRight, Church, Images, MapPin, MessageCircle, Phone, Sparkles } from 'lucide-react';
+import { CalendarDays, ChevronLeft, ChevronRight, Church, MapPin, MessageCircle, Phone, Sparkles } from 'lucide-react';
 import './styles.css';
 
 const invitation = {
@@ -163,23 +163,31 @@ function Blessing() {
 const photoSlides = [
   {
     label: 'Foto 1',
-    title: 'Dulce espera',
-    caption: 'Espacio para una foto especial del bebé o de la familia.'
+    title: 'Dulce sonrisa',
+    caption: 'Un momento lleno de ternura y alegría.',
+    src: './photos/baby-smile.jpg',
+    position: 'center 38%'
   },
   {
     label: 'Foto 2',
-    title: 'Un momento de amor',
-    caption: 'Ideal para una foto natural, tierna y luminosa.'
+    title: 'Nuestro pequeño amor',
+    caption: 'Una sonrisa que ilumina a toda la familia.',
+    src: './photos/baby-chair.jpg',
+    position: 'center 34%'
   },
   {
     label: 'Foto 3',
-    title: 'Bendiciones',
-    caption: 'Puede ser una foto con papás, padrinos o detalles del bautizo.'
+    title: 'En familia',
+    caption: 'Recuerdos especiales compartidos con mucho cariño.',
+    src: './photos/family-christmas.jpg',
+    position: 'center 28%'
   },
   {
     label: 'Foto 4',
-    title: 'Nuestra familia',
-    caption: 'Otro recuerdo bonito para compartir con los invitados.'
+    title: 'Desde el inicio',
+    caption: 'Bendecido desde sus primeros días.',
+    src: './photos/newborn-blanket.jpg',
+    position: 'center 42%'
   }
 ];
 
@@ -218,13 +226,10 @@ function PhotoSlideshow() {
           {photoSlides.map((slide, index) => (
             <article
               key={slide.label}
-              className={`photo-slide placeholder-${index + 1} ${index === current ? 'active' : ''}`}
+              className={`photo-slide ${index === current ? 'active' : ''}`}
               aria-hidden={index !== current}
             >
-              <div className="photo-placeholder">
-                <Images size={38} aria-hidden="true" />
-                <span>{slide.label}</span>
-              </div>
+              <img src={slide.src} alt={`${slide.title} — ${slide.caption}`} style={{ objectPosition: slide.position }} />
             </article>
           ))}
         </div>
@@ -233,7 +238,7 @@ function PhotoSlideshow() {
           <p className="eyebrow">Galería</p>
           <h3>{activeSlide.title}</h3>
           <p>{activeSlide.caption}</p>
-          <p className="small">Cuando me mandes las fotos, reemplazo estos espacios por imágenes reales.</p>
+          <p className="small">Usa las flechas o los puntos para ver más fotos.</p>
         </div>
 
         <button className="slide-button next" type="button" aria-label="Siguiente foto" onClick={() => goTo(current + 1)}>
