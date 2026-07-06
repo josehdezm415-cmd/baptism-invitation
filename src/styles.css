@@ -390,7 +390,7 @@ article p { margin: 0 0 10px; color: var(--muted); }
 .rsvp-card > p:not(.eyebrow):not(.small) { color: var(--muted); font-size: 1.08rem; }
 .quick-rsvp {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
   margin: 24px auto 22px;
 }

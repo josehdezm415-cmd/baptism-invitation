@@ -347,10 +347,6 @@ function RSVP() {
       message: `Hola, sí asistiré al bautizo de ${invitation.babyName}.`
     },
     {
-      label: 'Asistiré con ___ personas',
-      message: `Hola, asistiré al bautizo de ${invitation.babyName} con ___ personas.`
-    },
-    {
       label: 'No podré asistir',
       message: `Hola, gracias por la invitación al bautizo de ${invitation.babyName}. No podré asistir, pero les deseo muchas bendiciones.`
     }
