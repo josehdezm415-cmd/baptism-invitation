@@ -306,23 +306,23 @@ const photoSlides = [
   },
   {
     label: 'Foto 11',
-    title: 'Cuidado de tío',
-    caption: 'En brazos de su tío, cada momento se vuelve seguro y especial.',
-    src: './photos/denzel-dad-bottle-fill.jpg',
-    position: 'center center'
-  },
-  {
-    label: 'Foto 12',
     title: 'Con tía',
     caption: 'Un recuerdo dulce junto a su tía, cerquita del corazón.',
     src: './photos/denzel-mom-selfie-fill.jpg',
     position: 'center center'
   },
   {
-    label: 'Foto 13',
+    label: 'Foto 12',
     title: 'Pequeño explorador',
     caption: 'Con esa mirada tierna, llenas de luz cada día.',
     src: './photos/denzel-blue-cap-fill.jpg',
+    position: 'center center'
+  },
+  {
+    label: 'Foto 13',
+    title: 'Cuidado de tío',
+    caption: 'En brazos de su tío, cada momento se vuelve seguro y especial.',
+    src: './photos/denzel-dad-bottle-fill.jpg',
     position: 'center center'
   },
   {
