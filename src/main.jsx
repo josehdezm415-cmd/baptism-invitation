@@ -306,8 +306,8 @@ const photoSlides = [
   },
   {
     label: 'Foto 11',
-    title: 'Cuidado con amor',
-    caption: 'En brazos de papá, cada momento se vuelve seguro y especial.',
+    title: 'Cuidado de tío',
+    caption: 'En brazos de su tío, cada momento se vuelve seguro y especial.',
     src: './photos/denzel-dad-bottle-fill.jpg',
     position: 'center center'
   },
