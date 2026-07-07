@@ -278,8 +278,8 @@ const photoSlides = [
   },
   {
     label: 'Foto 7',
-    title: 'Rodeado de amor',
-    caption: 'Cada mirada y cada sonrisa celebran la alegría de tenerte con nosotros.',
+    title: 'Con su primo',
+    caption: 'Un recuerdo dulce con su primo, lleno de cariño y sonrisas compartidas.',
     src: './photos/denzel-family-kitchen-fill.jpg',
     position: 'center center'
   },
