@@ -128,6 +128,7 @@ function Hero() {
 
         <div className="hero-card">
           <Sparkles className="card-star top-star" size={19} aria-hidden="true" />
+          <span className="ornate-cross hero-cross" aria-hidden="true" />
           <p className="eyebrow">Con amor y gratitud</p>
           <h1>Bautizo de<br /><span>{invitation.babyName}</span></h1>
           <p className="intro">Nos encantaría que nos acompañes a celebrar este momento especial en la vida de nuestra familia.</p>
@@ -203,6 +204,7 @@ function Details() {
 function Blessing() {
   return (
     <section className="blessing" aria-label="Bendición">
+      <span className="ornate-cross blessing-cross" aria-hidden="true" />
       <p className="quote">“Que Dios bendiga siempre su camino y llene su vida de amor, fe y alegría.”</p>
       <p className="signature">Con cariño,<br />{invitation.parents}</p>
     </section>
@@ -267,10 +269,6 @@ function PhotoSlideshow() {
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
-        <button className="slide-button prev" type="button" aria-label="Foto anterior" onClick={() => goTo(current - 1)}>
-          <ChevronLeft size={24} aria-hidden="true" />
-        </button>
-
         <div className="slide-stage" aria-live="polite">
           {photoSlides.map((slide, index) => (
             <article
@@ -290,9 +288,14 @@ function PhotoSlideshow() {
           <p className="small">Usa las flechas o los puntos para ver más fotos.</p>
         </div>
 
-        <button className="slide-button next" type="button" aria-label="Siguiente foto" onClick={() => goTo(current + 1)}>
-          <ChevronRight size={24} aria-hidden="true" />
-        </button>
+        <div className="slide-controls" aria-label="Controles de fotos">
+          <button className="slide-button prev" type="button" aria-label="Foto anterior" onClick={() => goTo(current - 1)}>
+            <ChevronLeft size={24} aria-hidden="true" />
+          </button>
+          <button className="slide-button next" type="button" aria-label="Siguiente foto" onClick={() => goTo(current + 1)}>
+            <ChevronRight size={24} aria-hidden="true" />
+          </button>
+        </div>
       </div>
 
       <div className="slide-dots" aria-label="Seleccionar foto">
