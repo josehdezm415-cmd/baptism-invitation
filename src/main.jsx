@@ -4,11 +4,11 @@ import { CalendarDays, ChevronLeft, ChevronRight, Gift, MapPin, MessageCircle, P
 import './styles.css';
 
 const invitation = {
-  babyName: 'Denzel Boel Villalobos',
+  babyName: 'Denzel Boel Ayala',
   dayName: 'Sábado',
   date: '25 de julio, 2026',
   time: '3:00 p.m.',
-  parents: 'Kathy Lazo y Victor Villalobos',
+  parents: 'Kathy Lazo y Victor Ayala',
   year: '2026',
   eventStartIso: '2026-07-25T15:00:00-06:00',
   eventEndIso: '2026-07-25T18:00:00-06:00',
@@ -142,7 +142,7 @@ function Hero() {
           <div className="hero-actions">
             <Button href="#rsvp" icon={MessageCircle}>Confirmar asistencia</Button>
             <Button href="#ubicaciones" variant="ghost" icon={MapPin}>Ver ubicación</Button>
-            <Button href={googleCalendarUrl} target="_blank" rel="noopener noreferrer" variant="ghost" icon={CalendarDays}>Agregar al calendario</Button>
+            <Button href={googleCalendarUrl} target="_blank" rel="noopener noreferrer" variant="ghost">Agregar al calendario</Button>
           </div>
           <Sparkles className="card-star bottom-star" size={19} aria-hidden="true" />
         </div>
@@ -325,7 +325,7 @@ function Locations() {
           <p>{invitation.reception.address}</p>
           <div className="map-links">
             <a className="text-link" href={invitation.reception.mapUrl} target="_blank" rel="noopener noreferrer">Abrir en Google Maps</a>
-            <a className="text-link" href={invitation.reception.wazeUrl} target="_blank" rel="noopener noreferrer">Abrir en Waze</a>
+            <a className="text-link waze-link" href={invitation.reception.wazeUrl} target="_blank" rel="noopener noreferrer">Abrir en Waze</a>
           </div>
         </article>
       </div>
