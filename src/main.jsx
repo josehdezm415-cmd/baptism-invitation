@@ -313,8 +313,8 @@ const photoSlides = [
   },
   {
     label: 'Foto 12',
-    title: 'Con mamá',
-    caption: 'Un recuerdo dulce, cerquita del corazón.',
+    title: 'Con tía',
+    caption: 'Un recuerdo dulce junto a su tía, cerquita del corazón.',
     src: './photos/denzel-mom-selfie-fill.jpg',
     position: 'center center'
   },
