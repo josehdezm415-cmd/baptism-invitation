@@ -299,8 +299,8 @@ const photoSlides = [
   },
   {
     label: 'Foto 10',
-    title: 'Besitos de papá',
-    caption: 'El amor también se guarda en esos besitos que calman y acompañan.',
+    title: 'Besitos de tío',
+    caption: 'El cariño de un tío también se guarda en esos besitos llenos de ternura.',
     src: './photos/denzel-dad-kiss-fill.jpg',
     position: 'center center'
   },
