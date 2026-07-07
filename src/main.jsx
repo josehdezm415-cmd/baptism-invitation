@@ -261,6 +261,76 @@ const photoSlides = [
     caption: 'Bendecido desde sus primeros días.',
     src: './photos/newborn-blanket-fill.jpg',
     position: 'center center'
+  },
+  {
+    label: 'Foto 5',
+    title: 'Dulces sueños',
+    caption: 'Dormidito, recordándonos que los momentos más pequeños también son bendiciones.',
+    src: './photos/denzel-car-seat-fill.jpg',
+    position: 'center center'
+  },
+  {
+    label: 'Foto 6',
+    title: 'Primer abrazo',
+    caption: 'Un abrazo lleno de ternura y amor desde el primer día.',
+    src: './photos/denzel-first-hug-fill.jpg',
+    position: 'center center'
+  },
+  {
+    label: 'Foto 7',
+    title: 'Rodeado de amor',
+    caption: 'Cada mirada y cada sonrisa celebran la alegría de tenerte con nosotros.',
+    src: './photos/denzel-family-kitchen-fill.jpg',
+    position: 'center center'
+  },
+  {
+    label: 'Foto 8',
+    title: 'Cómplices en amarillo',
+    caption: 'Un lazo especial que crece con cada abrazo y cada mirada.',
+    src: './photos/denzel-brazil-brother-fill.jpg',
+    position: 'center center'
+  },
+  {
+    label: 'Foto 9',
+    title: 'Agüita y bendición',
+    caption: 'Que cada gotita recuerde la pureza y la alegría de este camino.',
+    src: './photos/denzel-bath-blessing-fill.jpg',
+    position: 'center center'
+  },
+  {
+    label: 'Foto 10',
+    title: 'Besitos de papá',
+    caption: 'El amor también se guarda en esos besitos que calman y acompañan.',
+    src: './photos/denzel-dad-kiss-fill.jpg',
+    position: 'center center'
+  },
+  {
+    label: 'Foto 11',
+    title: 'Cuidado con amor',
+    caption: 'En brazos de papá, cada momento se vuelve seguro y especial.',
+    src: './photos/denzel-dad-bottle-fill.jpg',
+    position: 'center center'
+  },
+  {
+    label: 'Foto 12',
+    title: 'Con mamá',
+    caption: 'Un recuerdo dulce, cerquita del corazón.',
+    src: './photos/denzel-mom-selfie-fill.jpg',
+    position: 'center center'
+  },
+  {
+    label: 'Foto 13',
+    title: 'Pequeño explorador',
+    caption: 'Con esa mirada tierna, llenas de luz cada día.',
+    src: './photos/denzel-blue-cap-fill.jpg',
+    position: 'center center'
+  },
+  {
+    label: 'Foto 14',
+    title: 'Bienvenido, amor',
+    caption: 'Desde tus primeros minutos, llegaste rodeado de amor y bendiciones.',
+    src: './photos/denzel-hospital-dad-fill.jpg',
+    position: 'center center'
   }
 ];
 
