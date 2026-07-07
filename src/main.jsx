@@ -144,7 +144,6 @@ function Hero() {
             <Button href="#ubicaciones" variant="ghost" icon={MapPin}>Ver ubicación</Button>
             <Button href={googleCalendarUrl} target="_blank" rel="noopener noreferrer" variant="ghost">Agregar al calendario</Button>
           </div>
-          <Sparkles className="card-star bottom-star" size={19} aria-hidden="true" />
         </div>
       </div>
     </section>
@@ -324,7 +323,7 @@ function Locations() {
           <h3>{invitation.reception.name}</h3>
           <p>{invitation.reception.address}</p>
           <div className="map-links">
-            <a className="text-link" href={invitation.reception.mapUrl} target="_blank" rel="noopener noreferrer">Abrir en Google Maps</a>
+            <a className="text-link google-maps-link" href={invitation.reception.mapUrl} target="_blank" rel="noopener noreferrer">Abrir en Google Maps</a>
             <a className="text-link waze-link" href={invitation.reception.wazeUrl} target="_blank" rel="noopener noreferrer">Abrir en Waze</a>
           </div>
         </article>
