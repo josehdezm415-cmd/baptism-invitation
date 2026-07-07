@@ -125,7 +125,6 @@ function Hero() {
         </div>
 
         <div className="hero-card">
-          <Sparkles className="card-star top-star" size={19} aria-hidden="true" />
           <span className="ornate-cross hero-cross" aria-hidden="true" />
           <p className="eyebrow">Con amor y gratitud</p>
           <h1>Bautizo de<br /><span>{invitation.babyName}</span></h1>
