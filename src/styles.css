@@ -635,49 +635,60 @@ footer { padding: 28px 20px 42px; color: var(--muted); text-align: center; }
 .rsvp-card,
 .slideshow-card,
 .blessing { position: relative; overflow: hidden; }
-.ornate-cross {
+.sacred-cross {
   position: relative;
   z-index: 1;
   display: block;
-  width: 64px;
-  height: 82px;
-  margin: 0 auto 18px;
+  width: clamp(86px, 12vw, 118px);
+  height: clamp(86px, 12vw, 118px);
+  margin: 0 auto 10px;
+  color: var(--gold-dark);
   filter:
-    drop-shadow(0 8px 12px rgba(126, 90, 33, 0.20))
-    drop-shadow(0 0 10px rgba(255, 248, 224, 0.22));
+    drop-shadow(0 12px 20px rgba(126, 90, 33, 0.16))
+    drop-shadow(0 0 18px rgba(255, 248, 224, 0.26));
 }
-.ornate-cross::before,
-.ornate-cross::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  border-radius: 3px;
-  background:
-    linear-gradient(90deg, rgba(104, 68, 20, 0.36), transparent 10%, rgba(255, 250, 221, 0.82) 28%, rgba(198, 141, 47, 0.82) 55%, rgba(100, 62, 18, 0.32) 100%),
-    repeating-linear-gradient(118deg, rgba(255, 255, 255, 0.18) 0 2px, rgba(126, 90, 33, 0.14) 2px 4px, transparent 4px 8px),
-    linear-gradient(180deg, #f9d990 0%, #d5a146 48%, #9b681e 100%);
-  border: 1px solid rgba(132, 85, 24, 0.48);
-  box-shadow:
-    inset 2px 0 3px rgba(255, 248, 224, 0.58),
-    inset -2px 0 3px rgba(92, 55, 16, 0.24),
-    inset 0 1px 0 rgba(255, 255, 255, 0.70),
-    inset 0 -2px 2px rgba(92, 55, 16, 0.26),
-    0 0 0 1px rgba(255, 244, 206, 0.32);
+.sacred-cross svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
 }
-.ornate-cross::before {
-  top: 0;
-  width: 12px;
-  height: 80px;
-  transform: translateX(-50%);
+.sacred-cross .cross-line {
+  fill: none;
+  stroke: url(#crossGold);
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 6px rgba(255, 236, 176, 0.45));
 }
-.ornate-cross::after {
-  top: 22px;
-  width: 56px;
-  height: 13px;
-  transform: translateX(-50%);
+.sacred-cross .cross-horizontal { stroke-width: 3.1; }
+.sacred-cross .dove-body {
+  fill: rgba(255, 255, 255, 0.34);
+  stroke: url(#doveGold);
+  stroke-width: 3;
+  stroke-linejoin: round;
 }
-.ornate-cross.hero-cross { margin-bottom: 16px; }
-.ornate-cross.blessing-cross { margin-bottom: 24px; }
+.sacred-cross .dove-wing,
+.sacred-cross .dove-feather,
+.sacred-cross .dove-tail {
+  fill: none;
+  stroke: url(#doveGold);
+  stroke-width: 3.3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.sacred-cross .dove-tail.soft {
+  opacity: 0.55;
+  stroke-width: 2.4;
+}
+.sacred-cross .dove-eye {
+  fill: #9b681e;
+}
+.sacred-cross.hero-cross { margin-bottom: 8px; }
+.sacred-cross.blessing-cross {
+  width: clamp(92px, 13vw, 126px);
+  height: clamp(92px, 13vw, 126px);
+  margin-bottom: 16px;
+}
 @media (max-width: 820px) {
   #root::after { inset: 10px; border-radius: 22px; }
   .topbar { top: 14px; width: calc(100% - 28px); justify-content: center; }

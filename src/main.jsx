@@ -70,6 +70,34 @@ function Button({ href, children, variant = 'primary', icon: Icon, ...props }) {
   );
 }
 
+function SacredCrossIcon({ className = '' }) {
+  return (
+    <span className={`sacred-cross ${className}`} aria-hidden="true">
+      <svg viewBox="0 0 180 180" role="img" focusable="false">
+        <defs>
+          <linearGradient id="crossGold" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0%" stopColor="#fff5cb" />
+            <stop offset="46%" stopColor="#d8ad55" />
+            <stop offset="100%" stopColor="#9b681e" />
+          </linearGradient>
+          <linearGradient id="doveGold" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0%" stopColor="#f8e7ad" />
+            <stop offset="100%" stopColor="#b98732" />
+          </linearGradient>
+        </defs>
+        <path className="cross-line cross-vertical" d="M78 20 C80 54 80 126 78 160" />
+        <path className="cross-line cross-horizontal" d="M42 62 C64 60 98 60 126 62" />
+        <path className="dove-body" d="M92 76 C101 68 113 74 116 88 C119 103 132 111 150 111 C136 123 114 122 103 109 C95 101 87 86 92 76 Z" />
+        <path className="dove-wing" d="M112 83 C126 69 137 56 144 45 C149 58 143 71 130 82 C141 78 151 72 158 64 C158 78 145 91 126 99" />
+        <path className="dove-feather" d="M119 103 C132 100 146 94 158 86 C155 102 139 114 116 116" />
+        <path className="dove-tail" d="M94 111 C78 114 58 122 43 137" />
+        <path className="dove-tail soft" d="M98 119 C78 124 59 132 45 147" />
+        <circle className="dove-eye" cx="101" cy="79" r="1.8" />
+      </svg>
+    </span>
+  );
+}
+
 function Nav() {
   const navItems = useMemo(() => [
     { id: 'detalles', label: 'Detalles' },
@@ -125,7 +153,7 @@ function Hero() {
         </div>
 
         <div className="hero-card">
-          <span className="ornate-cross hero-cross" aria-hidden="true" />
+          <SacredCrossIcon className="hero-cross" />
           <p className="eyebrow">Con amor y gratitud</p>
           <h1>Bautizo de<br /><span>{invitation.babyName}</span></h1>
           <p className="intro">Nos encantaría que nos acompañes a celebrar este momento especial en la vida de nuestra familia.</p>
@@ -198,7 +226,7 @@ function Details() {
 function Blessing() {
   return (
     <section className="blessing" aria-label="Bendición">
-      <span className="ornate-cross blessing-cross" aria-hidden="true" />
+      <SacredCrossIcon className="blessing-cross" />
       <p className="quote">“Que Dios bendiga siempre su camino y llene su vida de amor, fe y alegría.”</p>
       <p className="signature">Con cariño,<br />{invitation.parents}</p>
     </section>
