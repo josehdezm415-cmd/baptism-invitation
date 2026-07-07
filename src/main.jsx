@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { CalendarDays, ChevronLeft, ChevronRight, Gift, MapPin, MessageCircle, Phone, Share2, Sparkles } from 'lucide-react';
+import { CalendarDays, ChevronLeft, ChevronRight, Gift, MapPin, MessageCircle, Phone, Sparkles } from 'lucide-react';
 import './styles.css';
 
 const invitation = {
@@ -41,8 +41,6 @@ function getCountdownParts(targetIso) {
 }
 
 const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(`Bautizo de ${invitation.babyName}`)}&dates=${formatGoogleDate(invitation.eventStartIso)}/${formatGoogleDate(invitation.eventEndIso)}&details=${encodeURIComponent(`Acompáñanos a celebrar el bautizo de ${invitation.babyName}. RSVP: ${invitation.rsvpPhoneDisplay}. ${siteUrl}`)}&location=${encodeURIComponent(`${invitation.reception.name}, ${invitation.reception.address}`)}`;
-
-const shareUrl = `https://wa.me/?text=${encodeURIComponent(`Te comparto la invitación al bautizo de ${invitation.babyName}: ${siteUrl}`)}`;
 
 function useActiveSection(ids) {
   const [active, setActive] = useState(ids[0]);
@@ -145,7 +143,6 @@ function Hero() {
             <Button href="#rsvp" icon={MessageCircle}>Confirmar asistencia</Button>
             <Button href="#ubicaciones" variant="ghost" icon={MapPin}>Ver ubicación</Button>
             <Button href={googleCalendarUrl} target="_blank" rel="noopener noreferrer" variant="ghost" icon={CalendarDays}>Agregar al calendario</Button>
-            <Button href={shareUrl} target="_blank" rel="noopener noreferrer" variant="ghost" icon={Share2}>Compartir</Button>
           </div>
           <Sparkles className="card-star bottom-star" size={19} aria-hidden="true" />
         </div>
@@ -365,7 +362,6 @@ function RSVP() {
         <div className="rsvp-actions">
           <Button href={`tel:${invitation.rsvpPhoneWa}`} variant="ghost" icon={Phone}>Llamar</Button>
           <Button href={googleCalendarUrl} target="_blank" rel="noopener noreferrer" variant="ghost" icon={CalendarDays}>Guardar fecha</Button>
-          <Button href={shareUrl} target="_blank" rel="noopener noreferrer" variant="ghost" icon={Share2}>Compartir invitación</Button>
         </div>
         <p className="small">Contacto: {invitation.rsvpPhoneDisplay}</p>
       </div>
