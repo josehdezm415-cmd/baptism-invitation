@@ -338,6 +338,13 @@ const photoSlides = [
     caption: 'Un momento lleno de cariño con abuela, de esos que se guardan para siempre.',
     src: './photos/denzel-grandma-celebration-fill.jpg',
     position: 'center center'
+  },
+  {
+    label: 'Foto 16',
+    title: 'Con papá frente al mar',
+    caption: 'Un recuerdo lleno de calma, amor y la alegría de estar en brazos de papá.',
+    src: './photos/denzel-papa-ocean-fill.jpg',
+    position: 'center center'
   }
 ];
 
