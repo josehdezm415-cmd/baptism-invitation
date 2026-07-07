@@ -331,6 +331,13 @@ const photoSlides = [
     caption: 'Desde tus primeros minutos, llegaste rodeado de amor y bendiciones.',
     src: './photos/denzel-hospital-dad-fill.jpg',
     position: 'center center'
+  },
+  {
+    label: 'Foto 15',
+    title: 'Celebrando con abuela',
+    caption: 'Un momento lleno de cariño con abuela, de esos que se guardan para siempre.',
+    src: './photos/denzel-grandma-celebration-fill.jpg',
+    position: 'center center'
   }
 ];
 
