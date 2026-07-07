@@ -142,7 +142,6 @@ function Hero() {
           <div className="hero-actions">
             <Button href="#rsvp" icon={MessageCircle}>Confirmar asistencia</Button>
             <Button href="#ubicaciones" variant="ghost" icon={MapPin}>Ver ubicación</Button>
-            <Button href={googleCalendarUrl} target="_blank" rel="noopener noreferrer" variant="ghost">Agregar al calendario</Button>
           </div>
         </div>
       </div>
