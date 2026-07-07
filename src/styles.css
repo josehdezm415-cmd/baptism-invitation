@@ -20,8 +20,6 @@ body {
   background:
     radial-gradient(circle at 10% 18%, rgba(255, 255, 255, 0.74), transparent 30rem),
     radial-gradient(circle at 88% 12%, rgba(236, 215, 169, 0.18), transparent 34rem),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.20), rgba(246, 237, 222, 0.28)),
-    url('./assets/baptism-floral-cross-enhanced.png') center top / cover fixed no-repeat,
     linear-gradient(180deg, #fbf5ea 0%, #fffdf8 38%, var(--paper-2) 100%);
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.55;
@@ -33,7 +31,15 @@ body {
   isolation: isolate;
 }
 #root::before {
-  content: none;
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.20), rgba(255, 250, 240, 0.24) 42%, rgba(246, 237, 222, 0.30)),
+    url('./assets/baptism-floral-cross-enhanced.png') center top / cover no-repeat;
+  transform: translateZ(0);
 }
 #root::after {
   content: "";
@@ -56,10 +62,10 @@ main {
   overflow: hidden;
 }
 .topbar {
-  position: absolute;
-  top: 24px;
+  position: fixed;
+  top: clamp(16px, 2.2vw, 28px);
   left: 50%;
-  z-index: 4;
+  z-index: 50;
   display: flex;
   gap: 8px;
   padding: 8px;
@@ -96,7 +102,7 @@ main {
   position: relative;
   display: grid;
   min-height: 100svh;
-  padding: 104px 20px 68px;
+  padding: 138px 20px 68px;
   place-items: center;
 }
 .halo {
@@ -463,6 +469,11 @@ footer { padding: 28px 20px 42px; color: var(--muted); text-align: center; }
   backdrop-filter: blur(18px) saturate(190%) contrast(1.06) brightness(1.04);
 }
 .topbar {
+  position: fixed;
+  top: clamp(16px, 2.2vw, 28px);
+  left: 50%;
+  z-index: 50;
+  transform: translateX(-50%);
   background:
     linear-gradient(145deg, rgba(255, 255, 255, 0.18), rgba(255, 250, 242, 0.045)),
     rgba(255, 250, 242, 0.025);
@@ -527,7 +538,10 @@ footer { padding: 28px 20px 42px; color: var(--muted); text-align: center; }
 .blessing { position: relative; overflow: hidden; }
 .countdown,
 .date-block,
+.button,
+.primary,
 .ghost,
+.topbar a,
 .map-links .text-link,
 .slide-controls,
 .slide-button,
@@ -554,7 +568,9 @@ footer { padding: 28px 20px 42px; color: var(--muted); text-align: center; }
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.44);
 }
 .quick-rsvp a,
-.primary {
+.primary,
+.button {
+  color: var(--ink);
   border: 1px solid rgba(255, 255, 255, 0.42);
   box-shadow: 0 14px 34px rgba(126, 90, 33, 0.20), inset 0 1px 0 rgba(255, 255, 255, 0.30);
 }
@@ -615,7 +631,7 @@ footer { padding: 28px 20px 42px; color: var(--muted); text-align: center; }
   #root::after { inset: 10px; border-radius: 22px; }
   .topbar { top: 14px; width: calc(100% - 28px); justify-content: center; }
   .topbar a { padding: 8px 9px; font-size: 0.78rem; }
-  .hero { padding-top: 84px; }
+  .hero { padding-top: 122px; }
   .hero-showcase { grid-template-columns: 1fr; gap: 18px; }
   .hero-photo { display: block; justify-self: center; width: min(230px, 68vw); transform: none; border-radius: 30px; }
   .hero-card { border-radius: 28px; }
