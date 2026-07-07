@@ -18,8 +18,10 @@ body {
   margin: 0;
   color: var(--ink);
   background:
-    radial-gradient(circle at 10% 18%, rgba(255, 255, 255, 0.88), transparent 30rem),
-    radial-gradient(circle at 88% 12%, rgba(236, 215, 169, 0.28), transparent 34rem),
+    radial-gradient(circle at 10% 18%, rgba(255, 255, 255, 0.74), transparent 30rem),
+    radial-gradient(circle at 88% 12%, rgba(236, 215, 169, 0.18), transparent 34rem),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.20), rgba(246, 237, 222, 0.28)),
+    url('./assets/baptism-floral-cross-enhanced.png') center top / cover fixed no-repeat,
     linear-gradient(180deg, #fbf5ea 0%, #fffdf8 38%, var(--paper-2) 100%);
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.55;
@@ -31,15 +33,7 @@ body {
   isolation: isolate;
 }
 #root::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -3;
-  pointer-events: none;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 250, 240, 0.24) 42%, rgba(246, 237, 222, 0.34)),
-    url('./assets/baptism-floral-cross-enhanced.png') center top / cover no-repeat;
-  transform: translateZ(0) scale(1.01);
+  content: none;
 }
 #root::after {
   content: "";
@@ -443,7 +437,7 @@ article p { margin: 0 0 10px; color: var(--muted); }
 .quick-rsvp a:hover { transform: translateY(-1px); }
 footer { padding: 28px 20px 42px; color: var(--muted); text-align: center; }
 
-/* Video-matched Liquid Glass: visible blurred florals inside every panel */
+/* True Liquid Glass: transparent panes that show the real page background through them */
 .topbar,
 .hero-card,
 .detail-grid article,
@@ -455,20 +449,24 @@ footer { padding: 28px 20px 42px; color: var(--muted); text-align: center; }
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  background: rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.035) 44%, rgba(255, 255, 255, 0.075)),
+    rgba(255, 255, 255, 0.025);
   background-clip: padding-box;
-  border: 1px solid rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.58);
   box-shadow:
-    0 34px 84px rgba(31, 25, 17, 0.15),
-    0 12px 34px rgba(126, 90, 33, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.92),
-    inset 0 -1px 0 rgba(126, 90, 33, 0.045);
-  -webkit-backdrop-filter: blur(30px) saturate(175%) brightness(1.08);
-  backdrop-filter: blur(30px) saturate(175%) brightness(1.08);
+    0 32px 92px rgba(31, 25, 17, 0.16),
+    0 12px 30px rgba(126, 90, 33, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78),
+    inset 0 -1px 0 rgba(126, 90, 33, 0.04);
+  -webkit-backdrop-filter: blur(18px) saturate(190%) contrast(1.06) brightness(1.04);
+  backdrop-filter: blur(18px) saturate(190%) contrast(1.06) brightness(1.04);
 }
 .topbar {
-  background: rgba(255, 250, 242, 0.10);
-  border-color: rgba(255, 255, 255, 0.78);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.18), rgba(255, 250, 242, 0.045)),
+    rgba(255, 250, 242, 0.025);
+  border-color: rgba(255, 255, 255, 0.62);
 }
 .slide-copy {
   align-self: stretch;
@@ -485,17 +483,19 @@ footer { padding: 28px 20px 42px; color: var(--muted); text-align: center; }
 .topbar::before {
   content: "";
   position: absolute;
-  inset: -42px;
+  inset: 0;
   z-index: 0;
   pointer-events: none;
+  border-radius: inherit;
   background:
-    radial-gradient(ellipse at 12% 18%, rgba(172, 139, 214, 0.46), transparent 18rem),
-    radial-gradient(ellipse at 78% 72%, rgba(189, 154, 214, 0.34), transparent 20rem),
-    radial-gradient(circle at 88% 16%, rgba(198, 161, 93, 0.18), transparent 16rem),
-    url('./assets/baptism-floral-cross-enhanced.png') center top / 165% auto no-repeat;
-  filter: blur(30px) saturate(1.55) brightness(1.08);
-  transform: scale(1.15) translate3d(0, 0, 0);
-  opacity: 0.92;
+    radial-gradient(ellipse at 16% 0%, rgba(255, 255, 255, 0.38), transparent 28%),
+    radial-gradient(ellipse at 100% 100%, rgba(255, 255, 255, 0.16), transparent 36%),
+    linear-gradient(115deg, rgba(255, 255, 255, 0.24), transparent 34%, rgba(255, 255, 255, 0.06) 52%, transparent 68%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.62),
+    inset 0 -22px 46px rgba(255, 255, 255, 0.07);
+  opacity: 0.68;
 }
 .hero-card::after,
 .blessing::after,
@@ -507,22 +507,14 @@ footer { padding: 28px 20px 42px; color: var(--muted); text-align: center; }
 .topbar::after {
   content: "";
   position: absolute;
-  inset: 0;
+  inset: 10px;
   z-index: 1;
   pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.26);
   border-radius: inherit;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.44), rgba(255, 255, 255, 0.25) 42%, rgba(255, 255, 255, 0.15)),
-    radial-gradient(ellipse at 16% 0%, rgba(255, 255, 255, 0.58), transparent 30%),
-    radial-gradient(ellipse at 100% 100%, rgba(255, 255, 255, 0.26), transparent 34%),
-    linear-gradient(112deg, rgba(255, 255, 255, 0.30), transparent 31%, rgba(255, 255, 255, 0.08) 52%, transparent 66%);
-  box-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 0.56),
-    inset 0 1px 0 rgba(255, 255, 255, 0.86),
-    inset 0 -26px 52px rgba(255, 255, 255, 0.18);
-  opacity: 0.92;
+  opacity: 0.70;
 }
-.topbar::after { inset: 0; }
+.topbar::after { inset: 5px; }
 .hero-card > *,
 .blessing > *,
 .rsvp-card > *,
@@ -541,28 +533,30 @@ footer { padding: 28px 20px 42px; color: var(--muted); text-align: center; }
 .slide-button,
 .slide-dots button,
 .quick-rsvp a {
-  background: rgba(255, 255, 255, 0.24);
-  -webkit-backdrop-filter: blur(22px) saturate(180%) brightness(1.08);
-  backdrop-filter: blur(22px) saturate(180%) brightness(1.08);
-  border-color: rgba(255, 255, 255, 0.72);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.045)),
+    rgba(255, 255, 255, 0.035);
+  -webkit-backdrop-filter: blur(14px) saturate(180%) brightness(1.04);
+  backdrop-filter: blur(14px) saturate(180%) brightness(1.04);
+  border-color: rgba(255, 255, 255, 0.48);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.82),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.24),
-    0 10px 26px rgba(61, 44, 25, 0.08);
+    inset 0 1px 0 rgba(255, 255, 255, 0.58),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12),
+    0 10px 24px rgba(61, 44, 25, 0.07);
 }
 .date-block {
-  border: 1px solid rgba(255, 255, 255, 0.66);
+  border: 1px solid rgba(255, 255, 255, 0.44);
   border-radius: 26px;
 }
 .quick-rsvp a {
   color: var(--ink);
   font-weight: 900;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.58);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.44);
 }
 .quick-rsvp a,
 .primary {
-  border: 1px solid rgba(255, 255, 255, 0.48);
-  box-shadow: 0 14px 34px rgba(126, 90, 33, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.38);
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  box-shadow: 0 14px 34px rgba(126, 90, 33, 0.20), inset 0 1px 0 rgba(255, 255, 255, 0.30);
 }
 
 /* Subtle baptism accents: premium, ceremonial, not overpowering */
