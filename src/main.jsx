@@ -390,7 +390,7 @@ const photoSlides = [
   },
   {
     label: 'Foto 23',
-    title: 'Con su otro tío',
+    title: 'Con su tío',
     caption: 'Un abrazo tranquilo y lleno de cariño desde sus primeros días.',
     src: './photos/denzel-other-uncle-newborn-fill.jpg',
     position: 'center center'
