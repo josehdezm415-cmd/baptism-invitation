@@ -509,34 +509,41 @@ const photoSlides = [
   },
   {
     label: 'Foto 33',
+    title: 'Con su bisabuelita',
+    caption: 'Un recuerdo lleno de ternura con su bisabuelita, guardado con mucho amor.',
+    src: './photos/denzel-great-grandmother-ocean-fill.jpg',
+    position: 'center center'
+  },
+  {
+    label: 'Foto 34',
     title: 'Miradas de cariño',
     caption: 'De esos momentos sencillos donde el amor se nota en la mirada.',
     src: './photos/denzel-loving-arms-restaurant-fill.jpg',
     position: 'center center'
   },
   {
-    label: 'Foto 34',
+    label: 'Foto 35',
     title: 'Tarde de descanso',
     caption: 'Un ratito tranquilo, disfrutando la calma y la compañía.',
     src: './photos/denzel-hammock-uncle-fill.jpg',
     position: 'center center'
   },
   {
-    label: 'Foto 35',
+    label: 'Foto 36',
     title: 'Risas en el trabajo',
     caption: 'Una sonrisa que convierte cualquier lugar en un recuerdo feliz.',
     src: './photos/denzel-pink-shirt-shoulders-fill.jpg',
     position: 'center center'
   },
   {
-    label: 'Foto 36',
+    label: 'Foto 37',
     title: 'Siesta en casa',
     caption: 'Un descanso dulce, acompañado de paz y mucho amor.',
     src: './photos/denzel-home-nap-cat-fill.jpg',
     position: 'center center'
   },
   {
-    label: 'Foto 37',
+    label: 'Foto 38',
     title: 'Navidad en familia',
     caption: 'Un abrazo navideño lleno de amor, calor de hogar y alegría.',
     src: './photos/denzel-christmas-parents-fill.jpg',
