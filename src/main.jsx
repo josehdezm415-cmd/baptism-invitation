@@ -98,6 +98,55 @@ function SacredCrossIcon({ className = '' }) {
   );
 }
 
+const petals = [
+  { x: 4, size: 11, duration: 30, delay: -4, drift: 54, opacity: 0.38, rotate: 26, color: 'white' },
+  { x: 9, size: 7, duration: 38, delay: -20, drift: -34, opacity: 0.24, rotate: -18, color: 'cream' },
+  { x: 14, size: 10, duration: 34, delay: -10, drift: 42, opacity: 0.32, rotate: 52, color: 'blush' },
+  { x: 20, size: 6, duration: 42, delay: -28, drift: -48, opacity: 0.22, rotate: 12, color: 'gold' },
+  { x: 26, size: 13, duration: 36, delay: -16, drift: 62, opacity: 0.3, rotate: -42, color: 'cream' },
+  { x: 31, size: 8, duration: 32, delay: -2, drift: -28, opacity: 0.26, rotate: 36, color: 'white' },
+  { x: 37, size: 10, duration: 45, delay: -31, drift: 38, opacity: 0.23, rotate: -30, color: 'blush' },
+  { x: 43, size: 7, duration: 29, delay: -8, drift: -56, opacity: 0.28, rotate: 66, color: 'gold' },
+  { x: 49, size: 12, duration: 40, delay: -24, drift: 44, opacity: 0.34, rotate: -12, color: 'white' },
+  { x: 55, size: 9, duration: 35, delay: -13, drift: -40, opacity: 0.28, rotate: 44, color: 'cream' },
+  { x: 61, size: 6, duration: 46, delay: -35, drift: 58, opacity: 0.2, rotate: -56, color: 'blush' },
+  { x: 68, size: 11, duration: 31, delay: -5, drift: -36, opacity: 0.31, rotate: 18, color: 'white' },
+  { x: 73, size: 8, duration: 39, delay: -19, drift: 46, opacity: 0.24, rotate: -22, color: 'gold' },
+  { x: 79, size: 10, duration: 43, delay: -27, drift: -60, opacity: 0.27, rotate: 58, color: 'cream' },
+  { x: 84, size: 7, duration: 33, delay: -12, drift: 32, opacity: 0.25, rotate: -34, color: 'blush' },
+  { x: 90, size: 12, duration: 37, delay: -22, drift: -42, opacity: 0.29, rotate: 40, color: 'white' },
+  { x: 96, size: 8, duration: 44, delay: -30, drift: 34, opacity: 0.22, rotate: -64, color: 'gold' },
+  { x: 2, size: 6, duration: 41, delay: -26, drift: 64, opacity: 0.19, rotate: 72, color: 'cream' },
+  { x: 18, size: 8, duration: 48, delay: -37, drift: -52, opacity: 0.18, rotate: -72, color: 'white' },
+  { x: 34, size: 7, duration: 50, delay: -41, drift: 48, opacity: 0.17, rotate: 24, color: 'blush' },
+  { x: 52, size: 9, duration: 47, delay: -33, drift: -44, opacity: 0.2, rotate: -28, color: 'cream' },
+  { x: 70, size: 6, duration: 52, delay: -45, drift: 40, opacity: 0.17, rotate: 60, color: 'gold' }
+];
+
+function PetalLayer() {
+  return (
+    <div className="petal-layer" aria-hidden="true">
+      {petals.map((petal, index) => (
+        <span
+          key={`${petal.color}-${index}`}
+          className={`petal petal-${petal.color}`}
+          style={{
+            '--petal-x': `${petal.x}vw`,
+            '--petal-size': `${petal.size}px`,
+            '--petal-duration': `${petal.duration}s`,
+            '--petal-delay': `${petal.delay}s`,
+            '--petal-drift': `${petal.drift}px`,
+            '--petal-drift-soft': `${Math.round(petal.drift * 0.45)}px`,
+            '--petal-drift-reverse': `${Math.round(petal.drift * -0.22)}px`,
+            '--petal-opacity': petal.opacity,
+            '--petal-rotate': `${petal.rotate}deg`
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
 function Nav() {
   const navItems = useMemo(() => [
     { id: 'detalles', label: 'Detalles' },
@@ -634,15 +683,18 @@ function RSVP() {
 
 function App() {
   return (
-    <main>
-      <Hero />
-      <Details />
-      <PhotoSlideshow />
-      <Blessing />
-      <Locations />
-      <RSVP />
-      <footer>Bautizo de {invitation.babyName} · {invitation.year}</footer>
-    </main>
+    <>
+      <PetalLayer />
+      <main>
+        <Hero />
+        <Details />
+        <PhotoSlideshow />
+        <Blessing />
+        <Locations />
+        <RSVP />
+        <footer>Bautizo de {invitation.babyName} · {invitation.year}</footer>
+      </main>
+    </>
   );
 }
 
