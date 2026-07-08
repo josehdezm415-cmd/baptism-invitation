@@ -404,146 +404,139 @@ const photoSlides = [
   },
   {
     label: 'Foto 18',
-    title: 'Con sus abuelitos',
-    caption: 'Un abrazo de abuelos lleno de ternura, raíces y mucho amor.',
-    src: './photos/denzel-grandparents-garden-fill.jpg',
-    position: 'center center'
-  },
-  {
-    label: 'Foto 19',
     title: 'Con su primita',
     caption: 'Un recuerdo tierno con su primita, cuidándolo con una sonrisa llena de amor.',
     src: './photos/denzel-primita-newborn-fill.jpg',
     position: 'center center'
   },
   {
-    label: 'Foto 20',
+    label: 'Foto 19',
     title: 'Pequeñito recién llegado',
     caption: 'Un instante lleno de paz, ternura y la bendición de una nueva vida.',
     src: './photos/denzel-newborn-hospital-fill.jpg',
     position: 'center center'
   },
   {
-    label: 'Foto 21',
+    label: 'Foto 20',
     title: 'Primer abrazo de mamá',
     caption: 'El primer instante de amor, piel con piel, guardado para siempre.',
     src: './photos/denzel-mama-first-moment-fill.jpg',
     position: 'center center'
   },
   {
-    label: 'Foto 22',
+    label: 'Foto 21',
     title: 'Luces y sonrisas',
     caption: 'Un recuerdo brillante, lleno de alegría y ternura en familia.',
     src: './photos/denzel-mama-lights-fill.jpg',
     position: 'center center'
   },
   {
-    label: 'Foto 23',
+    label: 'Foto 22',
     title: 'Cerquita del corazón',
     caption: 'Un momento sencillo y dulce, de esos que dicen amor sin palabras.',
     src: './photos/denzel-mama-mirror-fill.jpg',
     position: 'center center'
   },
   {
-    label: 'Foto 24',
+    label: 'Foto 23',
     title: 'Con su tío',
     caption: 'Un abrazo tranquilo y lleno de cariño desde sus primeros días.',
     src: './photos/denzel-other-uncle-newborn-fill.jpg',
     position: 'center center'
   },
   {
-    label: 'Foto 25',
+    label: 'Foto 24',
     title: 'Con mamá y papá',
     caption: 'Aunque ese día estaba serio, el amor de mamá y papá lo rodeaba por completo.',
     src: './photos/denzel-parents-grumpy-birthday-fill.jpg',
     position: 'center center'
   },
   {
-    label: 'Foto 26',
+    label: 'Foto 25',
     title: 'En brazos de mamá',
     caption: 'Un recuerdo de los primeros días, lleno de ternura y paz.',
     src: './photos/denzel-mama-hospital-arms-fill.jpg',
     position: 'center center'
   },
   {
-    label: 'Foto 27',
+    label: 'Foto 26',
     title: 'Noche en familia',
     caption: 'Una noche especial, rodeado de cariño y luces bonitas.',
     src: './photos/denzel-night-family-city-fill.jpg',
     position: 'center center'
   },
   {
-    label: 'Foto 28',
+    label: 'Foto 27',
     title: 'Dulce compañía',
     caption: 'Un momento tranquilo que se queda guardado en el corazón.',
     src: './photos/denzel-mama-mirror-baby-fill.jpg',
     position: 'center center'
   },
   {
-    label: 'Foto 29',
+    label: 'Foto 28',
     title: 'Bajo su bendición',
     caption: 'Que la Virgen lo acompañe siempre con amor y protección.',
     src: './photos/denzel-guadalupe-mama-fill.jpg',
     position: 'center center'
   },
   {
-    label: 'Foto 30',
+    label: 'Foto 29',
     title: 'Con sus primos',
     caption: 'Alegrías de familia que hacen más bonito cada recuerdo.',
     src: './photos/denzel-pool-cousins-fill.jpg',
     position: 'center center'
   },
   {
-    label: 'Foto 31',
+    label: 'Foto 30',
     title: 'Familia y fe',
     caption: 'Un recuerdo especial junto a quienes lo acompañan con amor.',
     src: './photos/denzel-church-family-grandma-fill.jpg',
     position: 'center center'
   },
   {
-    label: 'Foto 32',
+    label: 'Foto 31',
     title: 'Cariño de prima',
     caption: 'Un momento tierno con su prima, lleno de cuidado y cariño.',
     src: './photos/denzel-cousin-kiss-newborn-fill.jpg',
     position: 'center center'
   },
   {
-    label: 'Foto 33',
+    label: 'Foto 32',
     title: 'Con abuela en la iglesia',
     caption: 'Un abrazo de abuela frente al altar, lleno de fe y cariño.',
     src: './photos/denzel-grandma-church-fill.jpg',
     position: 'center center'
   },
   {
-    label: 'Foto 34',
+    label: 'Foto 33',
     title: 'Miradas de cariño',
     caption: 'De esos momentos sencillos donde el amor se nota en la mirada.',
     src: './photos/denzel-loving-arms-restaurant-fill.jpg',
     position: 'center center'
   },
   {
-    label: 'Foto 35',
+    label: 'Foto 34',
     title: 'Tarde de descanso',
     caption: 'Un ratito tranquilo, disfrutando la calma y la compañía.',
     src: './photos/denzel-hammock-uncle-fill.jpg',
     position: 'center center'
   },
   {
-    label: 'Foto 36',
+    label: 'Foto 35',
     title: 'Risas en el trabajo',
     caption: 'Una sonrisa que convierte cualquier lugar en un recuerdo feliz.',
     src: './photos/denzel-pink-shirt-shoulders-fill.jpg',
     position: 'center center'
   },
   {
-    label: 'Foto 37',
+    label: 'Foto 36',
     title: 'Siesta en casa',
     caption: 'Un descanso dulce, acompañado de paz y mucho amor.',
     src: './photos/denzel-home-nap-cat-fill.jpg',
     position: 'center center'
   },
   {
-    label: 'Foto 38',
+    label: 'Foto 37',
     title: 'Navidad en familia',
     caption: 'Un abrazo navideño lleno de amor, calor de hogar y alegría.',
     src: './photos/denzel-christmas-parents-fill.jpg',
