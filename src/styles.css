@@ -737,17 +737,6 @@ footer { padding: 28px 20px 42px; color: var(--muted); text-align: center; }
 }
 
 /* Subtle baptism accents: premium, ceremonial, not overpowering */
-.hero::before {
-  content: "✦";
-  position: absolute;
-  top: 112px;
-  right: min(8vw, 92px);
-  color: rgba(198, 161, 93, 0.24);
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(5rem, 12vw, 10rem);
-  line-height: 1;
-  pointer-events: none;
-}
 .date-block::before,
 .date-block::after {
   content: "✧";
