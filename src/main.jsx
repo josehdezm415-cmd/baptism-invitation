@@ -359,6 +359,13 @@ const photoSlides = [
     caption: 'Un recuerdo tierno con su primita, cuidándolo con una sonrisa llena de amor.',
     src: './photos/denzel-primita-newborn-fill.jpg',
     position: 'center center'
+  },
+  {
+    label: 'Foto 19',
+    title: 'Pequeñito recién llegado',
+    caption: 'Un instante lleno de paz, ternura y la bendición de una nueva vida.',
+    src: './photos/denzel-newborn-hospital-fill.jpg',
+    position: 'center center'
   }
 ];
 
