@@ -394,6 +394,13 @@ const photoSlides = [
     caption: 'Un abrazo tranquilo y lleno de cariño desde sus primeros días.',
     src: './photos/denzel-other-uncle-newborn-fill.jpg',
     position: 'center center'
+  },
+  {
+    label: 'Foto 24',
+    title: 'Con mamá y papá',
+    caption: 'Aunque ese día estaba serio, el amor de mamá y papá lo rodeaba por completo.',
+    src: './photos/denzel-parents-grumpy-birthday-fill.jpg',
+    position: 'center center'
   }
 ];
 
