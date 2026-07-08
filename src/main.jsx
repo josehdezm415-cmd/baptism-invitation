@@ -453,8 +453,8 @@ const photoSlides = [
   },
   {
     label: 'Foto 32',
-    title: 'Besito de prima',
-    caption: 'Un beso lleno de cariño, de esos que hacen más bonito cada recuerdo.',
+    title: 'Cariño de prima',
+    caption: 'Un momento tierno con su prima, lleno de cuidado y cariño.',
     src: './photos/denzel-cousin-kiss-newborn-fill.jpg',
     position: 'center center'
   },
