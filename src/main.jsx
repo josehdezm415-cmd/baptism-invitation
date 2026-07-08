@@ -366,6 +366,27 @@ const photoSlides = [
     caption: 'Un instante lleno de paz, ternura y la bendición de una nueva vida.',
     src: './photos/denzel-newborn-hospital-fill.jpg',
     position: 'center center'
+  },
+  {
+    label: 'Foto 20',
+    title: 'Primer abrazo de mamá',
+    caption: 'El primer instante de amor, piel con piel, guardado para siempre.',
+    src: './photos/denzel-mama-first-moment-fill.jpg',
+    position: 'center center'
+  },
+  {
+    label: 'Foto 21',
+    title: 'Luces y sonrisas',
+    caption: 'Un recuerdo brillante, lleno de alegría y ternura en familia.',
+    src: './photos/denzel-mama-lights-fill.jpg',
+    position: 'center center'
+  },
+  {
+    label: 'Foto 22',
+    title: 'Cerquita del corazón',
+    caption: 'Un momento sencillo y dulce, de esos que dicen amor sin palabras.',
+    src: './photos/denzel-mama-mirror-fill.jpg',
+    position: 'center center'
   }
 ];
 
