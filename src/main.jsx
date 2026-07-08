@@ -530,7 +530,7 @@ const photoSlides = [
   },
   {
     label: 'Foto 36',
-    title: 'Risas de paseo',
+    title: 'Risas en el trabajo',
     caption: 'Una sonrisa que convierte cualquier lugar en un recuerdo feliz.',
     src: './photos/denzel-pink-shirt-shoulders-fill.jpg',
     position: 'center center'
