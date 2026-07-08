@@ -352,6 +352,13 @@ const photoSlides = [
     caption: 'Un abrazo de abuelos lleno de ternura, raíces y mucho amor.',
     src: './photos/denzel-grandparents-garden-fill.jpg',
     position: 'center center'
+  },
+  {
+    label: 'Foto 18',
+    title: 'Con su primita',
+    caption: 'Un recuerdo tierno con su primita, cuidándolo con una sonrisa llena de amor.',
+    src: './photos/denzel-primita-newborn-fill.jpg',
+    position: 'center center'
   }
 ];
 
