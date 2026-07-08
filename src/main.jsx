@@ -26,7 +26,7 @@ const invitation = {
   giftNote: 'Si deseas tener un detalle con Denzel, agradecemos regalo de sobre.'
 };
 
-const siteUrl = 'https://josehdezm415-cmd.github.io/baptism-invitation/';
+const siteUrl = 'https://bautizodedenzel.com/';
 
 function formatGoogleDate(iso) {
   return new Date(iso).toISOString().replace(/[-:]/g, '').replace(/\.\d{3}Z$/, 'Z');
