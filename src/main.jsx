@@ -579,15 +579,26 @@ function PhotoSlideshow() {
         onMouseLeave={() => setPaused(false)}
       >
         <div className="slide-stage" aria-live="polite">
-          {photoSlides.map((slide, index) => (
-            <article
-              key={slide.label}
-              className={`photo-slide ${index === current ? 'active' : ''}`}
-              aria-hidden={index !== current}
-            >
-              <img src={slide.src} alt={`${slide.title} — ${slide.caption}`} style={{ objectPosition: slide.position }} />
-            </article>
-          ))}
+          <div className="photo-viewport">
+            {photoSlides.map((slide, index) => (
+              <article
+                key={slide.label}
+                className={`photo-slide ${index === current ? 'active' : ''}`}
+                aria-hidden={index !== current}
+              >
+                <img src={slide.src} alt={`${slide.title} — ${slide.caption}`} style={{ objectPosition: slide.position }} />
+              </article>
+            ))}
+          </div>
+
+          <div className="slide-controls" aria-label="Controles de fotos">
+            <button className="slide-button prev" type="button" aria-label="Foto anterior" onClick={() => goTo(current - 1)}>
+              <ChevronLeft size={24} aria-hidden="true" />
+            </button>
+            <button className="slide-button next" type="button" aria-label="Siguiente foto" onClick={() => goTo(current + 1)}>
+              <ChevronRight size={24} aria-hidden="true" />
+            </button>
+          </div>
         </div>
 
         <div className="slide-copy">
@@ -595,15 +606,6 @@ function PhotoSlideshow() {
           <h3>{activeSlide.title}</h3>
           <p>{activeSlide.caption}</p>
           <p className="slide-hint">Navega con las flechas o puntos para ver más fotos</p>
-        </div>
-
-        <div className="slide-controls" aria-label="Controles de fotos">
-          <button className="slide-button prev" type="button" aria-label="Foto anterior" onClick={() => goTo(current - 1)}>
-            <ChevronLeft size={24} aria-hidden="true" />
-          </button>
-          <button className="slide-button next" type="button" aria-label="Siguiente foto" onClick={() => goTo(current + 1)}>
-            <ChevronRight size={24} aria-hidden="true" />
-          </button>
         </div>
       </div>
 
