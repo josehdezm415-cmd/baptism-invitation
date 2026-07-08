@@ -423,16 +423,17 @@ article p { margin: 0 0 10px; color: var(--muted); }
 .slide-copy p:not(.eyebrow):not(.slide-hint) { color: var(--muted); }
 .slide-hint {
   display: block;
-  width: fit-content;
-  margin: 20px 0 0;
+  width: min(82%, 360px);
+  margin: 22px auto 0;
   padding-top: 12px;
-  border-top: 1px solid rgba(198, 161, 93, 0.18);
-  color: rgba(117, 100, 81, 0.58);
-  font-size: 0.82rem;
-  font-weight: 500;
+  border-top: 1px solid rgba(198, 161, 93, 0.12);
+  color: rgba(117, 100, 81, 0.42);
+  font-size: 0.8rem;
+  font-weight: 400;
   font-style: italic;
   letter-spacing: 0;
   line-height: 1.35;
+  text-align: center;
 }
 .slide-hint::before {
   content: "";

@@ -598,7 +598,7 @@ function PhotoSlideshow() {
           <p className="eyebrow">Galería</p>
           <h3>{activeSlide.title}</h3>
           <p>{activeSlide.caption}</p>
-          <p className="slide-hint">Navega con las flechas o puntos para ver más fotos</p>
+          <p className="slide-hint">Puedes usar las flechas o puntos para ver más fotos.</p>
         </div>
       </div>
 
