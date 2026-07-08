@@ -345,6 +345,13 @@ const photoSlides = [
     caption: 'Un recuerdo lleno de calma, amor y la alegría de estar en brazos de papá.',
     src: './photos/denzel-papa-ocean-fill.jpg',
     position: 'center center'
+  },
+  {
+    label: 'Foto 17',
+    title: 'Con sus abuelitos',
+    caption: 'Un abrazo de abuelos lleno de ternura, raíces y mucho amor.',
+    src: './photos/denzel-grandparents-garden-fill.jpg',
+    position: 'center center'
   }
 ];
 
